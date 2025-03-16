@@ -1,7 +1,7 @@
 package com.pjff.springboot.di.app.models;
 
 //V-45,Paso 1.0 creamos la clase productos. 
-//Vid 50, ponemos implements Cloneable
+//V-50,Paso 1.14 ponemos implements Cloneable
 public class Product implements Cloneable {
 
     // Paso 1.1 ponemos sus atributos
@@ -51,7 +51,7 @@ public class Product implements Cloneable {
         this.price = price;
     }
 
-    // V-50
+    // V-50,paso 1.15
     @Override
     public Object clone() {
         try {

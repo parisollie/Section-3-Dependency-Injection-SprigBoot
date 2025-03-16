@@ -10,21 +10,21 @@ import org.springframework.stereotype.Service;
 import com.pjff.springboot.di.app.models.Product;
 import com.pjff.springboot.di.app.repositories.ProductRepository;
 
-//Vid 55,ponemos Service 
+//V-55,paso  ponemos Service 
 @Service
-// Vid 51 IMPL-implementacion ,Vid 52 ,ponemos la interface
+// V-51,Paso 1.21 IMPL-implementacion ,Vid 52 ,ponemos la interface
 public class ProductServiceImpl implements ProductService {
 
-    // Vid 61,inyectando por value, el valor viene de config.properties
+    // V-61,inyectando por value, el valor viene de config.properties
     @Value("${config.price.tax}")
     private Double tax;
 
     // inyectamos mediante interfaz
     private ProductRepository repository;
 
-    // Vid 56, implementamos un constructor
-    // Vid 58,donde se inyecta ponemos la referencia con @Qualifier
-    // Vid 63, ponem,os el json
+    // V-56, implementamos un constructor
+    // V-58,donde se inyecta ponemos la referencia con @Qualifier
+    // V-63, ponem,os el json
     public ProductServiceImpl(@Qualifier("productJson") ProductRepository repository) {
         // inyectando por constructor.
         this.repository = repository;
@@ -42,25 +42,25 @@ public class ProductServiceImpl implements ProductService {
             // V-47,paso 1.9, creamos el impuesto
             Double priceTax = p.getPrice() * tax;
             /*
-             * Vid 50, creamos una instancia y devolvemos nuestro objeto clon
+             * V-50,Paso 1.16 creamos una instancia y devolvemos nuestro objeto clon
              * y devuelve una nueta instancia de producto
              */
             Product newProd = (Product) p.clone();
             /*
-             * el clon devuelve una instancia de productos clonados y le modificamos el
+             * El clon devuelve una instancia de productos clonados y le modificamos el
              * precio
-             * Vid 50,para que sean inmutable: new product
-             * paso 1.10, devolvemos un longvalue
+             * V-50,Paso 1.17 para que sean inmutable: new product
+             * Paso 1.10, devolvemos un longvalue
              */
             newProd.setPrice(priceTax.longValue());
-            // devolvemos el objeto modificado
+            // devolvemos el nuevo producto.
             return newProd;
             // metódo collect es lo que devuelve el mapa por eso lo convertimos
         }).collect(Collectors.toList());
     }
 
     @Override
-    // Vid 47,paso 1.7
+    // V-47,paso 1.7
     public Product findById(Long id) {
         return repository.findById(id);
     }
