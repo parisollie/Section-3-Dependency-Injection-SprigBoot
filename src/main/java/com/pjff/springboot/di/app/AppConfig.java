@@ -1,4 +1,4 @@
-package com.pjff.springboot.di.app.springboot_di;
+package com.pjff.springboot.di.app;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
