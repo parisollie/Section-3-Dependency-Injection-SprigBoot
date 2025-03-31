@@ -1,6 +1,6 @@
 # Spring Boot MVC App 3
 
-A new Spring Boot 3 project.
+ Dependency injection 3
 
 ## Getting Started
 
