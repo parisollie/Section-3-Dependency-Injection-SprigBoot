@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.pjff.springboot.di.app.models.Product;
 import com.pjff.springboot.di.app.repositories.ProductRepository;
 
-//V-55,paso  ponemos Service 
+//V-55,paso 1.26 ponemos Service 
 @Service
 // V-51,Paso 1.21 IMPL-implementacion ,Vid 52 ,ponemos la interface
 public class ProductServiceImpl implements ProductService {
@@ -19,14 +19,15 @@ public class ProductServiceImpl implements ProductService {
     @Value("${config.price.tax}")
     private Double tax;
 
-    // inyectamos mediante interfaz
+    // V-54,paso 1.24 inyectamos mediante interfaz
     private ProductRepository repository;
 
-    // V-56, implementamos un constructor
-    // V-58,donde se inyecta ponemos la referencia con @Qualifier
-    // V-63, ponem,os el json
+    /*
+     * V-56,Paso 1.25 implementamos un constructor e inyectamos mediante el
+     * V-58,paso 1.31,donde se inyecta ponemos la referencia con @Qualifier
+     * V-63, ponemos el json
+     */
     public ProductServiceImpl(@Qualifier("productJson") ProductRepository repository) {
-        // inyectando por constructor.
         this.repository = repository;
 
     }

@@ -10,7 +10,7 @@ import org.springframework.core.io.Resource;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pjff.springboot.di.app.models.Product;
 
-//Vid 62
+//V-62
 public class ProductRepositoryJson implements ProductRepository {
 
     private List<Product> list;
@@ -30,7 +30,7 @@ public class ProductRepositoryJson implements ProductRepository {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             // convertimos a una lista
-            // Vid 64 objectMapper.readValue(resource.getInputStream()
+            // V-64 objectMapper.readValue(resource.getInputStream()
             list = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Product[].class));
         } catch (IOException e) {
             e.printStackTrace();

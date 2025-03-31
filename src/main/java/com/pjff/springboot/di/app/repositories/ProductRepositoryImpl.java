@@ -8,14 +8,18 @@ import org.springframework.stereotype.Repository;
 
 import com.pjff.springboot.di.app.models.Product;
 
-/*V-59, deja de ser singleton 
+/*V-59,paso 1.34 deja de ser singleton 
   @RequestScope
-  V-58, al tener dos repositorios ,primary indicia que es el principal.*/
+  V-57,paso 1.30 al tener dos repositorios ,primary indicia que es el principal.
+*/
 @Primary
 /*
- * V-55, Repository es un estereotipo, tambien es un componente de acceso a
+ * V-55,paso 1.25 Repository es un estereotipo, tambien es un componente de
+ * acceso a
  * datos
- * V-58, le llamamos al repositorio productList, para que no sea un nombre tan
+ * 
+ * V-58,paso 1.32 le llamamos al repositorio productList, para que no sea un
+ * nombre tan
  * largo.
  */
 @Repository("productList")

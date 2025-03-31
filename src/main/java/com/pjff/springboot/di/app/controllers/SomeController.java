@@ -17,11 +17,11 @@ import com.pjff.springboot.di.app.services.ProductService;
 @RequestMapping("/api")
 public class SomeController {
     /*
-     * V-53, Autowired siempre es para inyectar, no nos llames ,nosotros te
+     * V-53,paso 1.22 Autowired siempre es para inyectar, no nos llames ,nosotros te
      * llamamos.
      */
     @Autowired
-    // Ponemos nuestro atributo.
+    // V-54,paso 1.23 Ponemos nuestro atributo.
     private ProductService service;
 
     // Lo mapeamos a la raiz

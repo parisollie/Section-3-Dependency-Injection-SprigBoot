@@ -9,12 +9,12 @@ import org.springframework.core.io.Resource;
 import com.pjff.springboot.di.app.repositories.ProductRepository;
 import com.pjff.springboot.di.app.repositories.ProductRepositoryJson;
 
-//vid 61 
+//V-61 
 @Configuration
 @PropertySource("classpath:config.properties")
 public class AppConfig {
 
-    // Vid 63
+    // V-63
     @Value("classpath:json/product.json")
     private Resource resource;
 
